@@ -1,0 +1,30 @@
+.evenement-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .evenement-grille {
+        align-self: center;
+        width: 70%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .mois {
+
+        }
+
+        #septembre {
+
+        }
+
+        #octobre {
+
+        }
+
+        #novembre {
+
+        }
+
+    }
+}
