@@ -211,6 +211,29 @@ header .main-navigation .sub-menu {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: (100px)[31];
+      grid-template-rows: repeat(31, 100px);
+  text-align: center;
+}
+
+.evenement-main .evenement-grille div {
+  border: 1px solid black;
+}
+
+.evenement-main .evenement-grille div h1 {
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.evenement-main .evenement-grille .test {
+  -ms-grid-row: 15;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 15 / 2 / span 1 / span 1;
 }
 
 .site-footer {

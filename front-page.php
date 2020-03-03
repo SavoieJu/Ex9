@@ -58,18 +58,18 @@ get_header();
 
 		<?php if ( $the_query->have_posts() ) : ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <div class="site-news-container-unique">
-                <a href="<?php the_permalink(); ?>"><h1 class="site-news-news-post-title"><?php the_title(); ?></h1></a>
-                <?php the_post_thumbnail() ?>
-            </div>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
+        <div class="site-news-container-unique">
+            <a href="<?php the_permalink(); ?>"><h1 class="site-news-news-post-title"><?php the_title(); ?></h1></a>
+            <?php the_post_thumbnail() ?>
+        </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
 
-                <?php else : ?>
-                <span><?php __('Pas de nouvelle'); ?></span>
-                <?php endif; ?>
+        <?php else : ?>
+        <span><?php __('Pas de nouvelle'); ?></span>
+        <?php endif; ?>
             
-        </div><!-- #main -->
+    </div><!-- #main -->
 
 <?php
 get_sidebar();
