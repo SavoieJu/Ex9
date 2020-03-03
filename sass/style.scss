@@ -1,8 +1,9 @@
 /*!
-Theme Name: tp_SavoieJulien
+Theme Name: tp_SavoieJulien-enfant
 Theme URI: http://underscores.me/
 Author: Julien Savoie
 Author URI: http://savoie.dev
+template: tp_js
 Description: Un thème.
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -68,7 +69,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-// @import "navigation/navigation";
+@import "navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
