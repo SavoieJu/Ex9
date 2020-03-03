@@ -11,33 +11,6 @@
 
 get_header();
 ?>
-	<h1 class="pc-site-title"><?php bloginfo( 'name' ); ?></h1>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php 
-		// the query
-		$the_query = new WP_Query( array(
-			'category_name' => 'nouvelle',
-			'posts_per_page' => 3,
-		)); 
-		?>
-
-		<?php if ( $the_query->have_posts() ) : ?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-		<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-		<p><?php the_excerpt(); ?></p>
-
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-
-		<?php else : ?>
-		<span><?php __('Pas de nouvelle'); ?></span>
-		<?php endif; ?>
-        
-		</main><!-- #main -->
-	</div><!-- #primary -->
 	<div class='section-evenements'>
 		<div class="section-evenements-conteneur">
 			<h1>Événements!</h1>
@@ -45,7 +18,7 @@ get_header();
 				<?php 
 				// the query
 				$the_query = new WP_Query( array(
-					'category_name' => 'evenement',
+					'category_name' => 'conference',
 					'posts_per_page' => 4,
 				)); 
 				?>
@@ -63,7 +36,32 @@ get_header();
 				<?php endif; ?>
 			</ul>
 		</div>
-	</div>
+    </div>
+    <div id="news" class="site-news">
+
+		<?php 
+		// the query
+		$the_query = new WP_Query( array(
+			'category_name' => 'nouvelle',
+			'posts_per_page' => 4,
+		)); 
+		?>
+
+		<?php if ( $the_query->have_posts() ) : ?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <div class="site-news-container-unique">
+                <?php the_post_thumbnail() ?>
+                <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+                <!-- <p><?php the_excerpt(); ?></p> -->
+            </div>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+
+                <?php else : ?>
+                <span><?php __('Pas de nouvelle'); ?></span>
+                <?php endif; ?>
+            
+        </div><!-- #main -->
 
 <?php
 get_sidebar();

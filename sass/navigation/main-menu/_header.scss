@@ -1,13 +1,19 @@
 header {
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
   display: flex;
   justify-content: space-between;
   position: absolute;
+  background-color: white;
+
+  .site-branding {
+    margin: 0 0 0 40px;
+  }
 
   .main-navigation {
-    width: 40vw;
-    
+    align-self: center;
+    width: 30vw;
+    margin: 0 40px 0 0;
     display: flex;
     justify-content: space-between;
 
@@ -37,4 +43,5 @@ header {
 
 .hero-img-pc {
   width: 100vw;  
+  max-width: 100vw;  
 }
