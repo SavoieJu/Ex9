@@ -5,6 +5,7 @@
 ## Posts and pages
 --------------------------------------------------------------*/
 @import "primary/posts-and-pages";
+@import "primary/footer";
 
 /*--------------------------------------------------------------
 ## Comments
@@ -13,6 +14,7 @@
 
 body {
     margin: 0;
+    font-family: sans-serif;
 }
 
 .site {

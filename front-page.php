@@ -13,7 +13,7 @@ get_header();
 ?>
 	<div class='section-evenements'>
 		<div class="section-evenements-conteneur">
-			<h1>Événements!</h1>
+			<h1 class="section-title">Nos dernière conférences</h1>
 			<ul>
 				<?php 
 				// the query
@@ -26,7 +26,15 @@ get_header();
 				<?php if ( $the_query->have_posts() ) : ?>
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				
-				<li><div><?php the_post_thumbnail() ?><h3><?php the_title(); ?></h3></div></li>
+				<li>
+                    <div class="site-conference">
+                        <?php the_post_thumbnail() ?>
+                        <div class="site-conference-info">
+                            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?> <?php echo get_the_date( 'Y-m-d' ); ?></h3></a>
+                            <p><?php the_excerpt(); ?></p>
+                        </div>
+                    </div>
+                </li>
 
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
@@ -37,8 +45,9 @@ get_header();
 			</ul>
 		</div>
     </div>
+    <h1 class="section-title">Voici les dernières nouvelles</h1>
     <div id="news" class="site-news">
-
+        
 		<?php 
 		// the query
 		$the_query = new WP_Query( array(
@@ -50,9 +59,8 @@ get_header();
 		<?php if ( $the_query->have_posts() ) : ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="site-news-container-unique">
+                <a href="<?php the_permalink(); ?>"><h1 class="site-news-news-post-title"><?php the_title(); ?></h1></a>
                 <?php the_post_thumbnail() ?>
-                <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                <!-- <p><?php the_excerpt(); ?></p> -->
             </div>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
